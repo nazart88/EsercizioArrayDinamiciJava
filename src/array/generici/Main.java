@@ -23,5 +23,21 @@ public class Main {
         System.out.println("Nome del primo prodotto: " + prodotti.get(0).getNome());
         prodotti.add(new Product(1, "Nome prodotto 4", "Descrizione prodotto 4", 13.59));
         System.out.println("Numero di prodotti presenti nell'array: " + prodotti.size());
+
+
+        Object[] temp = prodotti.toArray();
+        Product[] lista = new Product[temp.length];
+        for(int i = 0; i < temp.length; i++){
+            lista[i] = (Product) temp[i];
+        }
+
+
+        for(Product p: lista){
+            System.out.println("Nome del prodotto: " + p.getNome());
+            System.out.println("Descrizione: " + p.getDescrizione());
+            System.out.println("Prezzo : " + p.getPrezzo());
+            System.out.println();
+            System.out.println();
+        }
     }
 }
